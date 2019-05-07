@@ -1,0 +1,21 @@
+{# extends 'base.html' %}
+
+
+{# block content %}
+    
+    
+    <h1>create_competition.html입니다. 공모전에 대한 디테일을 작성합니다</h1>
+    <h1></h1>
+    <form action="{% url 'create' %}" method="POST">
+        {% csrf_token %}
+        <label>제목</label><br>
+        <input type="text" name="title"><br><br>
+        <label>사용자 이름</label><br>
+        <input type="text" name="user_name"><br><br>
+        <label>모집하는 인원 수</label><br>
+        <input type="number" name="user_num"><br><br>
+        <label>내용</label><br>
+        <textarea></textarea name="content"><br><br>
+        <input type="submit" class="btn btn-primary" value="제출"/>
+    </form>
+{# endblock content %} 

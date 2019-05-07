@@ -1,0 +1,175 @@
+.all {
+    font-family: 'Noto Sans KR', sans-serif;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+}
+
+#circle {
+  width:200px;
+  height:200px;
+  border: 1px solid black;
+  border-radius: 50%;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  background-color:orange
+  margin-top:10%;
+}
+
+.img-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.img-icon {
+  width:60px;
+    right: 170px;
+}
+
+.icon-history {
+  width:60px;
+  right: 340px;
+}
+
+.icon-scrap {
+  width:60px;
+  right: 500px;
+}
+
+
+
+.text h4 {
+  margin-top:10%;
+  text-align: center;
+}
+
+.icon-section {
+  margin-top:20px;}
+
+  .icon-btn-section {
+  margin:auto;
+  width:260px;}
+
+  .text {  }
+
+#one {
+  width:200px;
+  height:200px;
+  margin-left:5%;
+  margin-top:5%;
+}
+
+#two {
+  width:200px;
+  height:200px;
+  margin-left:5%;
+}
+
+#three {
+  width:200px;
+  height:200px;
+  margin-left:5%;
+}
+
+.body{font-family: 'Nanum Gothic', sans-serif;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+    text-align: center;
+}
+
+
+.header img{
+    width: 180px;
+    height: 180px;
+    border-radius: 90px;
+    margin: 20px;
+    box-shadow: 5px 5px 6px -2px gray;
+}
+
+ion-icon{
+    width: 30px;
+    height: 30px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    position: relative;
+    float: center;
+    margin: 5px;
+}
+.icon{
+    margin: 20px;
+}
+.icon:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.info{
+    text-align:center;
+    margin: 20px;
+}
+.info p{
+    margin: 2px;
+    padding:0px;
+}
+
+h3{
+    text-align: left;
+    margin: 10px;
+    padding:10px;
+    border-bottom: solid 2px #f09837;
+}
+
+.text{
+    text-align: left;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding:10px;
+    height: 100px;
+    background-color: #f3f3f3;
+}
+.text p{
+    padding: 0px;
+    margin: 5px;
+}
+.container a{
+    margin: 20px;
+}
+
+li{ 
+    margin:5px;
+    padding: 0;
+    list-style-type: none;
+    background-color: none;
+}
+ul{
+    margin:0;
+    padding: 0;
+}
+
+.tag{ 
+    color:#50bcdf;
+    text-align: left;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding:10px;
+}
+.tag p{
+    padding: 0px;
+    margin: 5px;
+}
+.snsList{
+    margin: 40px;
+}

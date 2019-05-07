@@ -1,0 +1,95 @@
+.body{font-family: 'Nanum Gothic', sans-serif;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+    text-align: center;
+}
+
+
+.header img{
+    width: 180px;
+    height: 180px;
+    border-radius: 90px;
+    margin: 20px;
+    box-shadow: 5px 5px 6px -2px gray;
+}
+
+ion-icon{
+    width: 30px;
+    height: 30px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    position: relative;
+    float: center;
+    margin: 5px;
+}
+.icon{
+    margin: 20px;
+}
+.icon:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.info{
+    text-align:center;
+    margin: 20px;
+}
+.info p{
+    margin: 2px;
+    padding:0px;
+}
+
+h3{
+    text-align: left;
+    margin: 10px;
+    padding:10px;
+    border-bottom: solid 2px #f09837;
+}
+
+.text{
+    text-align: left;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding:10px;
+    height: 100px;
+    background-color: #f3f3f3;
+}
+.text p{
+    padding: 0px;
+    margin: 5px;
+}
+.container a{
+    margin: 20px;
+}
+
+li{ 
+    margin:5px;
+    padding: 0;
+    list-style-type: none;
+    background-color: none;
+}
+ul{
+    margin:0;
+    padding: 0;
+}
+
+.tag{ 
+    color:#50bcdf;
+    text-align: left;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding:10px;
+}
+.tag p{
+    padding: 0px;
+    margin: 5px;
+}
+.snsList{
+    margin: 40px;
+}

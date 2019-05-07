@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>타이틀</title>
+        <meta charset="UTF-8"> 
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	</head>
+	<body>
+
+<ul class="nav navbar-nav navbar-right">
+	{% if user.is_authenticated %}
+	<li><a href="">Likes</a></li>
+	<li><a href="">Profile</a></li>
+	<li><a href="{% url 'logout' %}">Logout</a></li>
+	{% else %}
+	<li><a href="">Profile</a></li>
+	<li><a href="{% url 'login' %}">Login</a></li>
+	<li><a href="{% url 'register' %}">register</a></li>
+	<!--<li><a href="">Signup</a></li>-->
+	{% endif %}
+</ul>
+{% block content %}
+{% endblock %}
+</body>

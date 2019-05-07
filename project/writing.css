@@ -1,0 +1,77 @@
+/*전체*/
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR');
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+}
+a.custom_nav1{color: white;}
+/*헤더*/
+.header{
+    margin-bottom: 30px;
+}
+.edit{
+    font-size: 14px;
+    float: right;
+}
+#logo {
+    width: 300px;
+    height: auto;
+    margin: 30px;
+}
+.header_right {
+    margin: 18px;
+    float: right;
+    position: relative; top: 25px; 
+}
+.custom_dropdown {
+    background-color: white;
+    color : #343434; 
+    border-color:white;
+    
+}
+.custom_dropdown:hover {
+    background-color: white;
+    color : #343434; 
+    border-color:white; 
+    
+}
+
+/* 메뉴 */
+.nav.nav-pills.nav-fill.custom_nav {
+    background-color:  #f09837;
+    color: white!important;
+    height: 50px;
+    line-height: 30px;
+    
+} 
+.nav-fill .nav-item{
+    border-radius: unset;
+}
+
+
+nav a:hover {
+    background-color: white;
+    color: #f09837;
+    border-radius: unset;
+    /* border-radius: 0px; */
+}
+
+.custom_nav {
+    color : white;
+}
+
+
+/* 콘텐츠 */
+
+.content {
+    width: 100%
+}
+
+.input_content {
+    width: 100%;
+    height:200%;
+    margin-top:5%;
+}

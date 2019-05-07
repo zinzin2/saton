@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>공모전게시판</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="main.css">
+
+</head>
+<body>
+    <div class="container">
+        <!-- Content here -->
+         <!--page(n).html 공통 헤더-->
+        <div class="header">
+            <div class="header_right">
+            <img src="./icon/my.png">
+            <span class="dropdown">
+                    <button class="custom_dropdown btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      마이페이지
+                    </button>
+                    <span class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href="{% url 'myprofile' %}">마이페이지 보기</a>
+                      <a class="dropdown-item" href="#">로그아웃</a>
+                    </span>
+                  </span>
+                </div>
+            <img src="./image/logo.png" id="logo"/> <!--멋사 로고, 누르면 멋사 홈페이지(https://class.likelion.org) 이동?-->
+        </div>
+
+        <nav class="nav nav-pills nav-fill custom_nav">
+            <a class="custom_nav1 nav-item nav-link" href="#">스터디</a>
+            <a class="custom_nav1 nav-item nav-link" href="#">공모전</a>
+            <a class="custom_nav1 nav-item nav-link" href="#">IT 행사 및 포럼</a>
+          </nav>
+
+        
+        <!-- 추천 콘텐츠 -->
+        
+        <div class="recommend">
+          <span class="recommend_title"> 추천 게시물 </span>
+          <div class="recommend_body">
+            <div id="rec_img"><a href=""><img src="./image/re-img.PNG"></a></div>
+            <div id="rec_text">
+              <p id="rec_text1"> <b>NAVER 기술 창업 공모전 (~5/13) </b> </p>
+              <p id="rec_text2"> 
+                <ul id ="rec_text2" >
+                  <li><b>기관 형태</b> : 대기업 </li>
+                  <li><b>참여 대상</b> : 대학생 </li>
+                  <li><b>모집 인원</b> : 정보 없음</li>
+                  <li><b>우대 역량</b> : 모두 지원 가능</li>
+                  <li><b>활동분야</b> : 인공지능, 헬스케어, VR, AR, 비디오, 오디오 자율주행, 로보틱스 등</li>
+                  </li>
+                  <li><b>활동혜택</b> : 상세페이지 참고</li>
+                </ul> </p>
+
+            </div>
+          </div>
+        </div>
+          
+
+        <!-- content가 들어올 부분-->
+        <div class="content">
+            <div class="content_title"> 스터디 </div>
+            <div class="content_body">
+              <div class="content_dropdown">
+                  <button class="custom_dropdown btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    분류
+                  </button>
+                  <span class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">게임개발</a>
+                    <a class="dropdown-item" href="#">웹프로그래밍</a>
+                    <a class="dropdown-item" href="#">웹디자인</a>
+                  </span>
+                </div>
+              <div class="content_ex">
+                <table>
+                  <tr>
+                    <td>[스터디]</td>
+                    <td>웹프로그래밍 스터디 구합니다~~!</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>조회수 : 543 참여 : 4</td>
+                  </tr>
+                  <tr>
+                    <td>[프로젝트]</td>
+                    <td>인디 게임 개발하실 분 모집해요~</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>조회수 : 543 참여 : 4</td>
+                  </tr>
+                  <tr>
+                    <td>[프로젝트]</td>
+                    <td>웹프로그래밍 프로젝트 같이 하실 분!!</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>조회수 : 601 참여 : 6</td>
+                    </tr>
+
+                  <tr>
+                    <td>[스터디]</td>
+                    <td>C++ 스터디 하실 분!!</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>조회수 : 547 참여 : 3</td>
+                    </tr>
+
+                  <tr>
+                      <td>[스터디]</td>
+                      <td>JAVA 스터디 하실 분!!</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>조회수 : 532 참여 : 5</td>
+                      </tr>
+
+                </table> 
+                </div>
+            </div>
+          </div>
+            </div>
+            <div class="content">
+            <div class="content_title"> 공모전 </div>
+            <div class="content_body">
+            <div class="content_dropdown">
+                  <button class="custom_dropdown btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    분류
+                  </button>
+                  <span class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">게임개발</a>
+                    <a class="dropdown-item" href="#">웹프로그래밍</a>
+                    <a class="dropdown-item" href="#">웹디자인</a>
+                  </span>
+                </div>
+              <div class="content_ex">
+                <table>
+                  <tr>
+                    <td>[기술창업]</td>
+                    <td>[네이버] 대학(원)생 기술창업 공모전(~5/13) 팀원 모집</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>조회수 : 567 참여 : 5</td>
+                  </tr>
+                  <tr>
+                    <td>[인공지능/블록체인]</td>
+                    <td>[과학기술정보통신부] 인공지능 블록체인 전문가 양성 (~5/8) 팀원 모집</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>조회수 : 543 참여 : 4</td>
+                  </tr>
+                  <tr>
+                    <td>[인공지능/블록체인]</td>
+                    <td>[과학기술정보통신부] 인공지능 블록체인 전문가 양성 (~5/8) 팀원 모집</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>조회수 : 601 참여 : 6</td>
+                    </tr>
+
+                  <tr>
+                    <td>[기술창업]</td>
+                    <td>[네이버] 대학(원)생 기술창업 공모전(~5/13) 팀원 모집</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>조회수 : 547 참여 : 3</td>
+                    </tr>
+
+                  <tr>
+                      <td>[인공지능/블록체인]</td>
+                      <td>[과학기술정보통신부] 인공지능 블록체인 전문가 양성 (~5/8) 팀원 모집</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>조회수 : 532 참여 : 5</td>
+                      </tr>
+                    </div>
+                </table> 
+              </div>
+            </div>
+          </div>
+
+          <div class="content">
+              <div class="content_title"> IT 행사 및 포럼 </div>
+              <div class="content_body">
+              <div class="content_dropdown">
+                    <button class="custom_dropdown btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      분류
+                    </button>
+                    <span class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href="#">게임개발</a>
+                      <a class="dropdown-item" href="#">웹프로그래밍</a>
+                      <a class="dropdown-item" href="#">웹디자인</a>
+                    </span>
+                  </div>
+                <div class="content_ex">
+                  <table>
+                    <tr>
+                      <td>[이더리움]</td>
+                      <td>ETHCON KOREA 2019 (5.27 ~ 28)</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>조회수 : 567 참여 : 5</td>
+                    </tr>
+                    <tr>
+                      <td>[VR/AR]</td>
+                      <td>서울 VR/AR 엑스포 (5.30 ~ 6.1)</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>조회수 : 543 참여 : 4</td>
+                    </tr>
+                    <tr>
+                      <td>[클라우드]</td>
+                      <td>Open Infrastructure & Cloud Native Days Korea (7.18 ~ 7.19)</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>조회수 : 601 참여 : 6</td>
+                      </tr>
+  
+                    <tr>
+                      <td>[VR/AR]</td>
+                      <td>서울 VR/AR 엑스포 (5.30 ~ 6.1)</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>조회수 : 547 참여 : 3</td>
+                      </tr>
+  
+                    <tr>
+                        <td>[이더리움]</td>
+                       <td>ETHCON KOREA 2019 (5.27 ~ 28)</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>조회수 : 532 참여 : 5</td>
+                        </tr>
+                      </div>
+                  </table> 
+                </div>
+              </div>
+            </div>
+            
+            
+        </div>
+         
+    
+      </div>
+   
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>웹디자인</title>
+
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+    
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="./page1.css">
+</head>
+<body class="body">
+    
+    <div class="container">
+        <!-- Content here -->
+         <!--page(n).html 공통 헤더-->
+        <div class="header">
+            <div class="header_right">
+            <img src="/icon/my.png">
+            <span class="dropdown">
+                    <button class="custom_dropdown btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      마이페이지
+                    </button>
+                    <span class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href="#">마이페이지 보기</a>
+                      <a class="dropdown-item" href="#">로그아웃</a>
+                    </span>
+                  </span>
+                </div>
+            <img src=/image/logo.png id="logo"/> <!--멋사 로고, 누르면 멋사 홈페이지(https://class.likelion.org) 이동?-->
+        </div>
+
+        <nav class="nav nav-pills nav-fill custom_nav">
+            <a class="custom_nav1 nav-item nav-link" href="#">스터디</a>
+            <a class="custom_nav1 nav-item nav-link" href="#">공모전</a>
+            <a class="custom_nav1 nav-item nav-link" href="#">IT 행사</a>
+          </nav>
+    </div>
+    
+       <div class="page">
+        <!--글제목-->
+        <div class="pageTitle">
+            <div class="badges">스터디</div>
+            <div class="badges">게임</div>
+            <p>{{detail.title}}</p>
+        </div>
+        <!--글내용-->
+        <div class="pageContents">
+            <p>
+                졸업하기 전 재미있는 프로젝트를 해보고 싶은데 혼자로는 역부족이어서 팀원을 구하게됐습니다ㅎㅎ! <br>간단한 게임 개발을 해보고 싶은데, 아직 아이디어는 없습니다 ㅜ.ㅜ<br>Don't
+                Starve 처럼 탐험을 하거나 To the Moon 같이 미션을 깨는 게임이 그나마 쉬울 것 같아요! 다른 아이디어도 언제든 환영입니다~~<br>같이 배우면서 만들어보아용^,^
+            </p>
+            <!--글작성자-->
+            <div class="pageWriter">
+                <p2>작성자: <a href="myprofile.html">{{detail.user_name}}</a></p2>
+            </div>
+            <!--신청버튼-->
+            <div class="wrapButton">
+                <button type="button" class=button>신청하기</button>
+            </div>
+        </div>
+
+
+    </div>
+
+    <!--신청한사람-->
+    <div class="wanted">
+        <div class="text">
+            <p>n명의 사람들이 당신을 기다리고 있습니다!</p>
+            <h6>프로필을 확인하고 마음에 드는 분께 컨택하세요.</h6>
+        </div>
+        <div class="list">
+            <div class="person">
+                <div class="info">
+                    <p1>장다래님,</p1>
+                    <p2>50자로 본인을 소개한다면?</p2>
+                    <p3>ㅎㅇㅎㅇ~</p3>
+                </div>
+            </div>
+            <div class="person">
+                <div class="info">
+                    <p1>그루트님,</p1>
+                    <p2>50자로 본인을 소개한다면?</p2>
+                    <p3>아이엠그루트</p3>
+                </div>
+            </div>
+            <div class="person">
+                <div class="info">
+                    <p1>도널드덕님,</p1>
+                    <p2>50자로 본인을 소개한다면?</p2>
+                    <p3>꽥꽥꼬액꽹액꽥꽥꼬액꽹액꽥꽥꼬액꽹액꽥꽥꼬액꽹액꽥꽥꽥꽥꼬액꽹액꽥꽥꼬액꽹액꽥꽥꼬액꽹액꽥꽥꼬액꽹액꽥꽥</p3>
+                </div>
+            </div>
+            <div class="person">
+                <div class="info">
+                    <p1>박찬호님,</p1>
+                    <p2>50로 본인을 소개한다면?</p2>
+                    <p3>1990년 고딩2때 청주에서 전국체전이 열렸다. 그리고 주간야구라는 당시 유일했던 야구잡지사에서 글을 쓰는 기자분이 그라운...</p3>
+                </div>
+            </div>
+            <div class="person">
+                <div class="info">
+                    <p1>철수님,</p1>
+                    <p2>50자로 본인을 소개한다면?</p2>
+                    <p3>영희 어딨니</p3>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

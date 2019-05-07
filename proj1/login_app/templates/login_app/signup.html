@@ -1,0 +1,41 @@
+{% load staticfiles %}
+
+{% block content %}
+
+<style>
+html{
+	background-color: #ff9933;
+	text-align: center;
+	font-size: 30px;
+}
+</style>
+
+<img src="{% static 'lion.png' %}"></img><br>
+
+<div class="signup">
+   <form action="" method="post">
+    	{% csrf_token %}
+		{% for field in signup_form %}
+			<div class="form-group{% if field.errors %} has-error{% endif %}">
+				{{ field.label_tag }}
+				{{ field }}
+				{% if field.errors %}
+					{% for error in field.errors %}
+					<span class="help-block">{{ error }}</span>
+					{% endfor %}
+				{% endif %}
+			</div>
+		{% endfor %}
+
+		{% if signup_form.non_field_errors %}
+			{% for error in login_form.non_field_errors %}
+			<p class="text-danger"><b>{{ error }}</b></p>
+			{% endfor %}
+		{% endif %}
+		<button  class="btn btn-primary btn-block">회원가입</button>
+		
+		<a href="mailto:"class="btn btn=primary"></a>
+	</form>	
+</div>
+
+{% endblock %}

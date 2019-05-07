@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+
+{% load staticfiles %}
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>lIKE LION KING</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+<style type="text/css">
+  /*전체*/
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR');
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+}
+a.custom_nav1{color: white;}
+/*헤더*/
+.header{
+    margin-bottom: 30px;
+}
+.edit{
+    font-size: 14px;
+    float: right;
+}
+.center{
+    margin-left: auto;
+    margin-right: auto;
+}
+#logo {
+    width: 300px;
+    height: auto;
+    margin: 30px;
+}
+.header_right {
+    margin: 18px;
+    float: right;
+    position: relative; top: 25px; 
+}
+.custom_dropdown {
+    background-color: white;
+    color : #343434; 
+    border-color:white;
+    
+}
+.custom_dropdown:hover {
+    background-color: white;
+    color : #343434; 
+    border-color:white; 
+    
+}
+
+/* 메뉴 */
+.nav.nav-pills.nav-fill.custom_nav {
+    background-color:  #f09837;
+    color: white!important;
+    height: 50px;
+    line-height: 30px;
+    
+} 
+.nav-fill .nav-item{
+    border-radius: unset;
+}
+
+
+nav a:hover {
+    background-color: white;
+    color: #f09837;
+    border-radius: unset;
+    /* border-radius: 0px; */
+}
+
+.custom_nav {
+    color : white;
+}
+
+.content {
+    height: 500px;
+}
+
+/* 추천 콘텐츠 */
+
+.recommend {
+    height: 450px;
+}
+
+.recommend_title {
+    display: inline-block;
+    font-size: 18px;
+    margin: 20px 0px 8px 10px; 
+}
+
+@media (max-width: 480px){
+
+    .recommend_body {
+        display: block;
+    
+    }
+}
+
+.recommend_body {
+    display: flex;
+
+}
+
+#rec_img {
+    width: 100%;
+    border: #696969;
+    flex: 60%;
+}
+
+#rec_img img:hover {
+    color: #343434;
+}
+
+#rec_text {
+    flex: 40%;
+
+}
+
+
+
+#rec_text1 {
+    font-size: 18px;
+    color: #f09837;
+    margin-left: 15px;
+
+}
+#rec_text2 {
+    color: #343434;
+    list-style-type: none;
+    
+}
+
+
+
+/* 콘텐츠 */
+.content_title {
+    height: 90px;
+    text-align: center;
+    padding-top: 30px;
+    background-color: lightgray;
+    font-size: 18px;
+    border: #696969;
+}
+
+.content_body {
+    border: #cecece 1px solid;
+    /* min-height: 300px; */
+    padding-bottom: 30px;
+    
+}
+
+.content_dropdown {
+    float: right;
+    position: relative; right: 200px;
+    margin: 20px;
+}
+
+.writing {
+    height: 43px;
+    background-color: #f09837;
+    color: white;
+    float: right;
+    position: relative; top: 17px; right: 25px;
+}
+
+.content_ex {
+    margin: 80px 30px 10px 50px;
+}
+.content_ex tr{
+    height: 45px;
+}
+
+table{
+    width: 100%;
+    height: 80px;
+}
+</style>
+
+</head>
+
+<body class="body">
+  <div class="container">
+    <!-- Content here -->
+    <!--page(n).html 공통 헤더-->
+    <div class="header">
+      <div class="header_right">
+        <img src="{% static 'person.png' %}">
+        <span class="dropdown">
+          <button class="custom_dropdown btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            마이페이지
+          </button>
+          <span class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              
+            {% if user.is_authenticated %}
+	        <li><a class="dropdown-item" class="dropdown-item" href="{% url 'myprofile' %}">마이페이지</a></li>
+	        <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
+	        {% else %}
+        	<li><a class="dropdown-item" href="{% url 'myprofile' %}">myprofile</a></li>
+	        <li><a class="dropdown-item" href="{% url 'signup' %}">register</a></li>
+	        {% endif %} 
+          </span>
+        </span>
+      </div>
+      <a href="{% url 'main' %}">
+        <img src="{% static 'new_logo.png' %}" id="logo" width="1050px" class="center">
+      </a>
+    </div>
+
+    <nav class="nav nav-pills nav-fill custom_nav">
+      <a class="custom_nav1 nav-item nav-link" href="#study">스터디</a>
+      <a class="custom_nav1 nav-item nav-link" href="#contest">공모전</a>
+      <a class="custom_nav1 nav-item nav-link" href="#IT">IT 행사 및 포럼</a>
+    </nav>
+
+
+    <!-- 추천 콘텐츠 -->
+
+    <div class="recommend">
+      <span class="recommend_title"> 추천 게시물 </span>
+      <div class="recommend_body">
+        <div id="rec_img"><a href=""><img src="{% static 'naver.png' %}"></a></div>
+        <div id="rec_text">
+          <p id="rec_text1"> <b>NAVER 기술 창업 공모전 (~5/13) </b> </p>
+          <p id="rec_text2">
+            <ul id="rec_text2">
+              <li><b>기관 형태</b> : 대기업 </li>
+              <li><b>참여 대상</b> : 대학생 </li>
+              <li><b>모집 인원</b> : 정보 없음</li>
+              <li><b>우대 역량</b> : 모두 지원 가능</li>
+              <li><b>활동분야</b> : 인공지능, 헬스케어, VR, AR, 비디오, 오디오 자율주행, 로보틱스 등</li>
+              </li>
+              <li><b>활동혜택</b> : 상세페이지 참고</li>
+            </ul>
+          </p>
+
+        </div>
+      </div>
+    </div>
+
+
+    <!-- content가 들어올 부분-->
+    <div class="content">
+      <a id="study"></a>
+      <div class="content_title"> 스터디
+
+      </div>
+      <div class="content_body">
+        <div class="content_dropdown">
+          <button class="custom_dropdown btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            분류
+          </button>
+          <span class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">게임개발</a>
+            <a class="dropdown-item" href="#">웹프로그래밍</a>
+            <a class="dropdown-item" href="#">웹디자인</a>
+          </span>
+        </div>
+        <a href="{% url 'create' %}">
+            <button type="button" class="writing btn btn-warning">글쓰기</button>
+        </a>
+        <div class="content_ex">
+          <table>
+            {% for item in study_detail %}
+            <a href="{% url 'detail' item.id%}">
+              [스터디] {{item.title}}
+            </a>
+            <br>
+            {% endfor %}
+          </table>
+        </div>
+      </div>
+      </a>
+    </div>
+    <div class="content">
+      <a id="contest">
+        <div class="content_title"> 공모전 </div>
+      </a>
+      <div class="content_body">
+        <div class="content_dropdown">
+          <button class="custom_dropdown btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            분류
+          </button>
+          <span class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">게임개발</a>
+            <a class="dropdown-item" href="#">웹프로그래밍</a>
+            <a class="dropdown-item" href="#">웹디자인</a>
+          </span>
+        </div>
+        <a href="{% url 'create' %}">
+            <button type="button" class="writing btn btn-warning">글쓰기</button>
+        </a>
+        <div class="content_ex">
+          <table>
+              {% for item in competition_detail %}
+              <a href="{% url 'detail' item.id%}">
+                [공모전] {{item.title}}
+              </a>
+              <br>
+              {% endfor %}
+          </table>
+        </div>
+      </div>
+    </div>
+
+  <div class="content">
+    <a id="IT">
+      <div class="content_title"> IT 행사 및 포럼 </div>
+    </a>
+    <div class="content_body">
+      <div class="content_dropdown">
+        <button class="custom_dropdown btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          분류
+        </button>
+        <span class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">게임개발</a>
+          <a class="dropdown-item" href="#">웹프로그래밍</a>
+          <a class="dropdown-item" href="#">웹디자인</a>
+        </span>
+      </div>
+      <a href="{% url 'create' %}">
+          <button type="button" class="writing btn btn-warning">글쓰기</button>
+      </a>
+      <div class="content_ex">
+        <table>
+            {% for item in IT_detail %}
+            <a href="{% url 'detail' item.id%}">
+              [IT 및 포럼] {{item.title}}
+            </a>
+            <br>
+            {% endfor %}
+        </table>
+      </div> 
+    </div>
+  </div>
+
+
+  </div>
+
+
+  </div>
+
+</body>
+
+</html>

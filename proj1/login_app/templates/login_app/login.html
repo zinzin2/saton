@@ -1,0 +1,59 @@
+{% load staticfiles %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+html{
+	background-color: #ff9933;
+	text-align: center;
+	font-size: 30px;
+}
+</style>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body class="text-center">
+    <form class="form-signin">
+<img src="{% static 'lion.png' %}"></img><br><br>
+{% block title %}Login{% endblock %}
+
+<div class="login">
+	 <h1 >SIGN IN TO <br/> 'LIKE LION KING' </h1>
+	<form action="" method="post">
+		{% csrf_token %}
+		{% for field in login_form %}
+			<div class="form-group">
+				{{ field.label_tag }}
+				{{ field }}
+				{% if field.errors %}
+					{% for error in field.errors %}
+					<span class="help-block">{{ error }}</span>
+					{% endfor %}
+				{% endif %}
+			</div>
+		{% endfor %}
+
+		{% if login_form.non_field_errors %}
+			{% for error in log %}
+			{% endfor %}in_form.non_field_errors %}
+			<p class="text-danger"><b>{{ error }}</b></p>
+		{% endif %}
+		<button class="btn btn-primary btn-block">로그인</button>
+		<a href="{% url '#' %}" class="btn btn-primary">로그인</a>
+		
+	</form>
+	<a href="{% url 'signup'  %}" class="btn btn-primary btn-block">회원가입</a>
+</div>
+
+<h1>{{user.username}}</h1>
+{% endblock %}	
+</form>
+</body>
+</html>
+
+

@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>마이프로필</title>
+    <link rel="Stylesheet" type="text/css" href="{% static "myprofile.css" %}"/>
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+</head>
+
+<body class="body">
+    <script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
+
+    <div class="header">
+        <a href="{% url 'main' %}"><img src="{% static 'lion.jpg' %}" witdh="300" height="300" /></a>
+        <div class="info">
+            <p><b>장다래</b>: 멋쟁이 사자처럼 7기</p>
+            <p>서울시립대학교 17, 철학과/컴퓨터과학부</p>
+        </div>
+        <div class="icon">
+            <ion-icon name="contact" title="경력"><a href="#history"></a></ion-icon>
+            <ion-icon name="heart-empty" title="관심사"><a href="#like"></a></ion-icon>
+            <ion-icon name="tablet-portrait" title="SNS"><a href="#sns"></a></ion-icon>
+        </div>
+    </div>
+
+    <div class="container">
+        <a id="aboutMe">
+            <h3>50자 자기소개:</h3>
+            <div class="text">
+                <p>ㅎㅇㅎㅇ~</p>
+            </div>
+        </a>
+        <a id="history">
+            <h3>경력 사항</h3>
+            <div class="text">
+                <ul>
+                    <li>- 네이버 대학생 기술창업 공모전 참가상
+                    </li>
+                    <li>- 멋사 뉴비톤 우수상
+                    </li>
+                    <li>- 멋쟁이 사자처럼 새뜻톤 입상
+                    </li>
+                </ul>
+            </div>
+        </a>
+
+        <a id="like">
+            <h3>관심사</h3>
+            <div class="tag"><p>#웹디자인 #게임개발 #Python스터디 #Go언어스터디 #재밌게_작업하기 #엉성해도_끝까지_완성하기 #밤샘코딩 #화이팅해요</p></div>
+        </a>
+
+        <a id="sns">
+            <div class="snsList">
+                <ion-icon name="tv"></ion-icon>
+                <ion-icon name="logo-github"></ion-icon>
+                <ion-icon name="logo-instagram"></ion-icon>
+                <ion-icon name="logo-whatsapp"></ion-icon>
+            </div>
+        </a>
+    </div>
+</body>
+
+</html>

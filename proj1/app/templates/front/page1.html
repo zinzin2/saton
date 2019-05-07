@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+
+{% load staticfiles %}
+
+<html lang="en">
+<head>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <style type="text/css">
+        @font-face { font-family: 'Goyang'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Goyang.woff') format('woff'); font-weight: normal; font-style: normal; }
+/*전체*/
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR');
+.body{
+    font-family: 'Noto Sans KR', sans-serif;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+}
+a.custom_nav1{color: white;}
+/*헤더*/
+.header{
+    margin-bottom: 30px;
+}
+.edit{
+    font-size: 14px;
+    float: right;
+}
+.center{
+    margin-left: auto;
+    margin-right: auto;
+}
+#logo {
+    width: 300px;
+    height: auto;
+    margin: 30px;
+}
+.header_right {
+    margin: 18px;
+    float: right;
+    position: relative; top: 25px; 
+}
+.custom_dropdown {
+    background-color: white;
+    color : #343434; 
+    border-color:white;
+    
+}
+.custom_dropdown:hover {
+    background-color: white;
+    color : #343434; 
+    border-color:white; 
+    
+}
+
+/* 메뉴 */
+.nav.nav-pills.nav-fill.custom_nav {
+    background-color:  #f09837;
+    color: white!important;
+    height: 50px;
+    line-height: 30px;
+    
+} 
+.nav-fill .nav-item{
+    border-radius: unset;
+}
+
+
+nav a:hover {
+    background-color: white;
+    color: #f09837;
+    border-radius: unset;
+    /* border-radius: 0px; */
+}
+
+.custom_nav {
+    color : white;
+}
+
+.content {
+    height: 500px;
+}
+
+/* 추천 콘텐츠 */
+
+.recommend {
+    height: 450px;
+}
+
+.recommend_title {
+    display: inline-block;
+    font-size: 18px;
+    margin: 20px 0px 8px 10px; 
+}
+
+@media (max-width: 480px){
+
+    .recommend_body {
+        display: block;
+    
+    }
+}
+
+.recommend_body {
+    display: flex;
+
+}
+
+#rec_img {
+    width: 100%;
+    border: #696969;
+    flex: 60%;
+}
+
+#rec_img img:hover {
+    color: #343434;
+}
+
+#rec_text {
+    flex: 40%;
+
+}
+
+
+
+#rec_text1 {
+    font-size: 18px;
+    color: #f09837;
+    margin-left: 15px;
+
+}
+#rec_text2 {
+    color: #343434;
+    list-style-type: none;
+    
+}
+
+
+
+/* 콘텐츠 */
+.content_title {
+    height: 90px;
+    text-align: center;
+    padding-top: 30px;
+    background-color: lightgray;
+    font-size: 18px;
+    border: #696969;
+}
+
+.content_body {
+    border: #cecece 1px solid;
+    /* min-height: 300px; */
+    padding-bottom: 30px;
+    
+}
+
+.content_dropdown {
+    float: right;
+    position: relative; right: 200px;
+    margin: 20px;
+}
+
+.writing {
+    height: 43px;
+    background-color: #f09837;
+    color: white;
+    float: right;
+    position: relative; top: 17px; right: 25px;
+}
+
+.content_ex {
+    margin: 80px 30px 10px 50px;
+}
+.content_ex tr{
+    height: 45px;
+}
+
+table{
+    width: 100%;
+    height: 80px;
+}
+/*전체*/
+/* body{
+  font-family: 'Nanum Gothic', sans-serif;
+  width: 80%;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+} */
+a{
+    color: black;
+    text-decoration: none;
+}
+
+.page{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+/*글제목*/
+.pageTitle{
+    position:relative;
+    margin: 10px;
+    padding-bottom: 4px;
+}
+.pageTitle p{
+  font-size: 20px;
+  position:absolute;
+  top: 10%;
+  width: auto;
+  margin-left: 160px;
+}
+.pageTitle:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.badges{
+  float:left;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  background-color: #facf5a;
+  padding-top: 23px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  text-align:center;
+  color: #ffffff;
+  font-size: 18px;
+  font-family: 'Goyang';
+  font-weight: lighter;
+}
+.badges:nth-child(even){
+  background-color: #692db7;
+  width: 50px;
+  height: 50px;
+  font-size: 15px;
+  padding-top: 14px;
+  
+}
+
+/*글내용*/
+.pageContents{
+    border-top: solid 2px #a6cb12;
+    padding: 10px;
+    margin: 10px;
+    border-bottom: solid 3px #a6cb12;
+}
+.pageContents p{
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+/*글작성자*/
+.pageWriter{
+    text-align: right;
+    margin-top: 30px;
+    padding-right:50px;
+}
+
+
+/*신청버튼*/
+.wrapButton{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin: 20px;
+}
+
+.button {
+  padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 8px;
+  background-color: #f89d13;
+  color: white;
+  -webkit-transition-duration: 0.3s; /* Safari */
+  transition-duration: 0.3s;
+  display: inline-block;
+  justify-content: center;
+  border: 0;
+  margin: 10px;
+}
+.button:hover {
+  box-shadow: 0 5px 10px 0 rgba(0,0,0,0.3);
+}
+
+/*신청한사람들*/
+.wanted{
+  margin-top: 50px;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.text p{
+    text-align: center;
+    font-size: 20px;
+    margin: 0px;
+    padding: 5px;
+}
+.text h6{
+  text-align: center;
+  font-size: 15px;
+  margin: 0px;
+  padding: 5px;
+  font-weight: lighter;
+  color: #696969;
+}
+.text{
+  margin: 20px;
+}
+.wanted .list{
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+}
+.wanted .list:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.person {
+  display: inline-block;
+  width: 220px;
+  padding: 10px;
+  margin: 10px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+} 
+
+.person:before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+} 
+.info { 
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 15px;
+  text-align: left;
+}
+.info:after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.person:nth-child(4n+0) {
+  border:  #facf5a 2.5px solid;
+}
+.person:nth-child(4n+1) {
+  border:  #8f71ff 2.5px solid;
+}
+.person:nth-child(4n+2) {
+  border:  #d61d4e 2.5px solid;
+}
+.person:nth-child(4n+3) {
+  border:  #a6cb12 2.5px solid;
+}
+
+.person:hover {
+    border: none;
+  background-color:  #ececec;
+}
+
+.info p1{
+  float:center;
+  font-size: 19px;
+  margin-bottom: 7px;
+}
+.info p2{
+  float:left;
+  color: #696969;
+  font-weight: 100;
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+.info p3{
+  float:left;
+}
+
+.black{
+    background-color: black;
+    opacity: 0.2;
+    text-align: center;
+    
+}
+
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>상세페이지</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+    
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" href="page1.css">
+    
+</head>
+
+<body class="body">
+    
+<div class="container">
+    <!-- Content here -->
+    <!--page(n).html 공통 헤더-->
+    <div class="header">
+      <div class="header_right">
+       <a href="{% url 'main' %}"> <img src="{% static 'person.png' %}"></a>
+        <span class="dropdown">
+          <button class="custom_dropdown btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            마이페이지
+          </button>
+          <span class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              
+            {% if user.is_authenticated %}
+	        <li><a class="dropdown-item" class="dropdown-item" href="{% url 'myprofile' %}">마이페이지</a></li>
+	        <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
+	        {% else %}
+        	<li><a class="dropdown-item" href="{% url 'myprofile' %}">myprofile</a></li>
+	        <li><a class="dropdown-item" href="{% url 'signup' %}">register</a></li>
+	        {% endif %}  
+            
+          </span>
+        </span>
+      </div>
+      <a href="">
+        <img src="{% static 'new_logo.png' %}" id="logo" width="1050px" class="center">
+      </a>
+    </div>
+
+    <nav class="nav nav-pills nav-fill custom_nav">
+      <a class="custom_nav1 nav-item nav-link" href="{% url 'main' %}">스터디</a>
+      <a class="custom_nav1 nav-item nav-link" href="{% url 'main' %}#contest">공모전</a>
+      <a class="custom_nav1 nav-item nav-link" href="{% url 'main' %}#IT">IT 행사 및 포럼</a>
+    </nav>
+    </div>
+    
+       <div class="page">
+        <!--글제목-->
+        <div class="pageTitle">
+            <div class="badges">스터디</div>
+            <div class="badges">게임</div>
+            <p>{{detail.title}}</p>
+        </div>
+        <!--글내용-->
+        <div class="pageContents">
+            <p>{{detail.content}}</p>
+            <!--글작성자-->
+            <div class="pageWriter">
+                <p2>작성자: <a href="{% url 'myprofile' %}">장다래</a></p2>
+            </div>
+            <!--신청버튼-->
+            <div class="wrapButton">
+                <button type="button" class=button>신청하기</button>
+                <a href="{% url 'delete' detail.id %}"><button type="button" class=button>삭제하기</button></a>
+            </div>
+            <!--삭제버튼-->
+            <div class="wrapButton">
+                
+                
+            </div>
+            
+        </div>
+
+
+    </div>
+
+    <!--신청한사람-->
+    <div class="wanted">
+        <div class="text">
+            <p>{{detail.user_num}}명의 팀 구성원을 모집하세요!</p>
+            <h6>프로필을 확인해보면, 여러분과 꼭 맞는 사람들이 기다리고 있습니다.</h6>
+        </div>
+        <div class="list">
+            <div class="person">
+                <div class="info">
+                    <p1>장다래님,</p1>
+                    <p2>50자로 본인을 소개한다면?</p2>
+                    <p3>ㅎㅇㅎㅇ~</p3>
+                </div>
+            </div>
+            <div class="person">
+                <div class="info">
+                    <p1>그루트님,</p1>
+                    <p2>50자로 본인을 소개한다면?</p2>
+                    <p3>아이엠그루트</p3>
+                </div>
+            </div>
+            <div class="person">
+                <div class="info">
+                    <p1>도널드덕님,</p1>
+                    <p2>50자로 본인을 소개한다면?</p2>
+                    <p3>꽥꽥꼬액꽹액꽥꽥꼬액꽹액꽥꽥꼬액꽹액꽥꽥꼬액꽹액꽥꽥꽥꽥꼬액꽹액꽥꽥꼬액꽹액꽥꽥꼬액꽹액꽥꽥꼬액꽹액꽥꽥</p3>
+                </div>
+            </div>
+            <div class="person">
+                <div class="info">
+                    <p1>박찬호님,</p1>
+                    <p2>50로 본인을 소개한다면?</p2>
+                    <p3>1990년 고딩2때 청주에서 전국체전이 열렸다. 그리고 주간야구라는 당시 유일했던 야구잡지사에서 글을 쓰는 기자분이 그라운...</p3>
+                </div>
+            </div>
+            <div class="person">
+                <div class="info">
+                    <p1>철수님,</p1>
+                    <p2>50자로 본인을 소개한다면?</p2>
+                    <p3>영희 어딨니</p3>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+    <script type="text/javascript">
+        window.onload = function() {
+            $(document).ready(function () {
+                var name = "{{detail.user_name}}"
+                $("button").click(function () {
+                    var box = '<div class="person"><div class="info"><p1>' + name + '님,</p1><p2>50자로 본인을 소개한다면?</p2><p3>영희 어딨니</p3></div></div>';
+                    $(".list").append(box);
+                });
+            });
+        }
+         
+          
+    </script>
+    
+</body>
+</html>

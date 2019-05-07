@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>create.html을 수정합니다. 스터디에 대한 디테일을 수정합니다.</h1>
+
+<form action="{% url 'update' detail.id %}" method="POST">
+    {% csrf_token %}
+    <label>제목</label><br>
+    <input type="text" name="title" value="{{ detail.title }}"><br><br>
+    <label>사용자 이름</label><br>
+    <input type="text" name="user_name"  value="{{ detail.user_name }}"><br><br>
+    <label>모집하는 인원 수</label><br>
+    <input type="number" name="user_num" value="{{ detail.user_num }}"><br><br>
+    <label>내용</label><br>
+    <textarea name="content">{{ detail.cotent }}</textarea><br><br>
+    <input type="submit" class="btn btn-primary" value="수정"/>
+</form>
+</body>
+</html>
+
